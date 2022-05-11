@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'PP Mori';
+    font-weight: bold;
+    src: url('PP Mori/PPMori-SemiBold.otf') format('truetype');
+  }
+
+
+body{
+  font-family: 'PP Mori';
+    max-height: 100vh;
+    overflow-y: hidden;
+ }
+ 
+ img{
+   
+     height: 100vh;
+ }
+
+ .container{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);;
+   grid-template-rows: repeat(3, 1fr);;
+   min-height: 100vh;
+   max-height: 100vh;
+   
+   column-gap: 20px;
+   row-gap: 20px;
+ }
+
+.grid-item{
+  background-color: aqua;
+}
+
+.illustration-subject{
+  grid-column:  span 4;
+  grid-row: 3 / span 1;
+  background-color: black;
+}
+
+img{
+  width: 90vw;
+  height: auto;
+}
