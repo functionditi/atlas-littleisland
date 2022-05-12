@@ -8,6 +8,7 @@
 </head>
 <body>
   <div class="container">
+    <!-- <div class="grid-item"></div> -->
       <div class="illustration-subject">
         <div id="illustration-container" >
           
@@ -16,9 +17,10 @@
          <div class="slidecontainer" id="slidecontainer">
           <input type="range" min="1" max="100" value="100" class="slider" id="myRange">
           <h4><span id="demo"></span></h4>
-          <!-- <button onclick="deactivateElement('slidecontainer', 'intro', 'hello')">
-            <h6>Reset!</h6>
-          </button> -->
+          <h5><span id="desc"></span></h5>
+          <button onclick="toggleContent('illustration-container')">
+            <h6>See<span id="see"></span></h6>
+          </button>
         </div>
         
       </div>
@@ -38,47 +40,88 @@
 </body>
 
 <script>
-  function activateElement(idname, idsend, classname) {
-            var x = document.getElementById(idname);
-            var y = document.getElementById(idsend);
-           var z=document.getElementById(classname);
-              x.style.display = "block";
-            
-            y.style.display="none";
-            z.style.display="block"
-          }
-  function deactivateElement(idname, idsend) {
-            var x = document.getElementById(idname);
-            var y = document.getElementById(idsend);
+  // function activateElement(idname, idsend) {
+  //           var x = document.getElementById(idname);
+  //           var y = document.getElementById(idsend);
            
-              y.style.display = "block";
+  //             x.style.display = "block";
             
-            x.style.display="none";
-          }
+  //           y.style.display="none";
+           
+  //         }
+  // function deactivateElement(idname, idsend) {
+  //           var x = document.getElementById(idname);
+  //           var y = document.getElementById(idsend);
+           
+  //             y.style.display = "block";
+            
+  //           x.style.display="none";
+  //         }
+
+  var check=0;
+  function toggleContent(drawIllExpanded){
+    var drawIllSend=document.getElementById(drawIllExpanded);
+    if(check==0){
+     
+    drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-FULL-2021-05.png">`;
+    check=1;
+    theSee.innerHTML=" less";
+    }
+    else{
+      drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-05.png">`;
+    check=0;
+    theSee.innerHTML=" more";
+    }
+
+    
+    
+  }
 
 
   var slider = document.getElementById("myRange");
   var output = document.getElementById("demo");
+  var theSee = document.getElementById("see");
+  var theDesc = document.getElementById("desc");
   var drawIll=document.getElementById("illustration-container");
   // if (slider.value<50){
   //   drawIll.innerHTML+=`<img src="./assets/illustrations-subject-03.png">`;
   // }
   drawIll.innerHTML=`<img src="./assets/illustrations-subject-05.png">`;
   output.innerHTML="2021";
+  if(check==0){
+    theSee.innerHTML=" more";
+  }
+  theDesc.innerHTML="Little Island";
+    
+  
 
+  
 slider.oninput = function() {
   // output.innerHTML = this.value;
   var val=slider.value;
   if (val<33){
     drawIll.innerHTML=`<img src="./assets/illustrations-subject-03.png">`;
     output.innerHTML="1920s";
+    theDesc.innerHTML="British Cunard-White Star";
   }
   else if (val>=33 && val <66){
     drawIll.innerHTML=`<img src="./assets/illustrations-subject-04.png">`;
     output.innerHTML="1980s";
+    theDesc.innerHTML="Pier 54";
   }
   else {
-    drawIll.innerHTML=`<img src="assets/illustrations-subject-FULL-2021-05.png">`;
+
+    if(check==0){
+      theSee.innerHTML=" more";
+      drawIll.innerHTML=`
+    <img src="./assets/illustrations-subject-05.png">  `;
+    }
+    // drawIll.innerHTML=`<img src="assets/illustrations-subject-FULL-2021-05.png">`;
+    else if(check==1){
+      theSee.innerHTML=" less";
+      drawIll.innerHTML=`<img src="assets/illustrations-subject-FULL-2021-05.png">`;
+    }
+    theDesc.innerHTML="Little Island";
     output.innerHTML="2021";
   }
   

@@ -8,7 +8,7 @@
 body{
   font-family: 'PP Mori';
     max-height: 100vh;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     /* background-color: rgb(219, 255, 161); */
     color: #04AA6D;
     /* background-color: rgb(62, 62, 62); */
@@ -25,9 +25,18 @@ body{
  p{
    padding: 0% ;
    margin: 5px;
+   text-align: center;
  }
 
 h6{
+  font-family: 'PP Mori';
+  padding: 0% ;
+  margin: 5px;
+  font-size: 0.75rem;
+}
+
+
+h5{
   font-family: 'PP Mori';
   padding: 0% ;
   margin: 5px;
@@ -58,7 +67,7 @@ h6:hover{
 
  .container{
    display: grid;
-   grid-template-columns: repeat(1, 1fr);;
+   grid-template-columns: repeat(4, 1fr);;
    grid-template-rows: repeat(3, 1fr);;
    min-height: 100vh;
    max-height: 100vh;
@@ -68,21 +77,21 @@ h6:hover{
  }
 
 .grid-item{
-  /* background-color: aqua; */
-  display: none;
+  background-color: aqua;
+  
   padding: 1rem;
 }
 
 .illustration-subject{
-  /* grid-column:  span 4; */
+  grid-column:  span 4;
   grid-row: 2 / span 1;
   padding: 1rem;
   
 }
 
 img{
-  margin-left: 10vw;
-  width: 75vw;
+  margin-left: 15vw;
+  width: 65vw;
   height: auto;
 }
 
