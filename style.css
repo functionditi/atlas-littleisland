@@ -11,6 +11,7 @@ body{
     overflow-y: hidden;
     /* background-color: rgb(219, 255, 161); */
     color: #04AA6D;
+    background-color: rgb(62, 62, 62);
  }
  
  img{
@@ -115,7 +116,7 @@ background: none;
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   /* margin-left: 45%; */
-  width: 10%; /* Full-width */
+  width: 200px; /* Full-width */
   height: 5px; /* Specified height */
   background: #000; /* Grey background */
   outline: none; /* Remove outline */
