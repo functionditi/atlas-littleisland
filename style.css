@@ -146,7 +146,7 @@ background: none;
  appearance: none; 
   width: 15px; /* Set a specific slider handle width */
   height: 15px; /* Slider handle height */
-  background: #04AA6D; /* Green background */
+  background: #aee075; /* Green background */
   cursor: pointer; /* Cursor on hover */
   border-radius: 3px;
 }
