@@ -60,6 +60,9 @@
      else if(val>66){
       drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-FULL-2021-05.png">`;
      }
+     else if(val<33){
+      drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-FULL-2021-07.png">`;
+     }
     
     check=1;
     theSee.innerHTML=" less";
@@ -71,6 +74,9 @@
      }
      else if(val>66){
       drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-05.png">`;
+     }
+     else if(val<33){
+      drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-03.png">`;
      }
       
     check=0;
@@ -101,10 +107,23 @@ slider.oninput = function() {
   
   var val=slider.value;
   if (val<33){
-    drawIll.innerHTML=`<img src="./assets/illustrations-subject-03.png">`;
-    output.innerHTML="1920s";
+    // drawIll.innerHTML=`<img src="./assets/illustrations-subject-03.png">`;
+    // output.innerHTML="1920s";
+    // theDesc.innerHTML="British Cunard-White Star";
+    if(check==0){
+      theSee.innerHTML=" more";
+      drawIll.innerHTML=`
+    <img src="./assets/illustrations-subject-03.png">  `;
+    }
+    
+    else if(check==1){
+      theSee.innerHTML=" less";
+      drawIll.innerHTML=`<img src="assets/illustrations-subject-FULL-2021-07.png">`;
+    }
     theDesc.innerHTML="British Cunard-White Star";
+    output.innerHTML="1920s";
   }
+
   else if (val>=33 && val <66){
     // drawIll.innerHTML=`<img src="./assets/illustrations-subject-04.png">`;
     // output.innerHTML="1980s";
