@@ -24,16 +24,7 @@
         </div>
         
       </div>
-      <div id="intro">
-        <!-- <button onclick="activateElement('slidecontainer', 'intro', 'hello')">
-          <h3>Welcome to Little Island.</h3>
-        </button> -->
-     
-      </div>
-      <!-- <div class="grid-item" id="hello">
-       Lorem ipsum dolor sit amet consectetur, adipisicing elit. A nam laudantium, reiciendis dolores voluptatem ipsa quaerat molestias doloremque, odit recusandae similique ullam vel eos et necessitatibus, ducimus laboriosam perferendis. Ex.
-      </div> -->
-       
+      
 
     </div>
    
@@ -61,14 +52,27 @@
   var check=0;
   function toggleContent(drawIllExpanded){
     var drawIllSend=document.getElementById(drawIllExpanded);
+    var val=slider.value;
     if(check==0){
-     
-    drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-FULL-2021-05.png">`;
+     if (val>=33 && val <66){
+      drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-FULL-2021-06.png">`;
+     }
+     else if(val>66){
+      drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-FULL-2021-05.png">`;
+     }
+    
     check=1;
     theSee.innerHTML=" less";
     }
     else{
+
+      if (val>=33 && val <66){
+        drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-04.png">`;
+     }
+     else if(val>66){
       drawIllSend.innerHTML=`<img src="./assets/illustrations-subject-05.png">`;
+     }
+      
     check=0;
     theSee.innerHTML=" more";
     }
@@ -83,9 +87,6 @@
   var theSee = document.getElementById("see");
   var theDesc = document.getElementById("desc");
   var drawIll=document.getElementById("illustration-container");
-  // if (slider.value<50){
-  //   drawIll.innerHTML+=`<img src="./assets/illustrations-subject-03.png">`;
-  // }
   drawIll.innerHTML=`<img src="./assets/illustrations-subject-05.png">`;
   output.innerHTML="2021";
   if(check==0){
@@ -97,7 +98,7 @@
 
   
 slider.oninput = function() {
-  // output.innerHTML = this.value;
+  
   var val=slider.value;
   if (val<33){
     drawIll.innerHTML=`<img src="./assets/illustrations-subject-03.png">`;
@@ -105,18 +106,32 @@ slider.oninput = function() {
     theDesc.innerHTML="British Cunard-White Star";
   }
   else if (val>=33 && val <66){
-    drawIll.innerHTML=`<img src="./assets/illustrations-subject-04.png">`;
-    output.innerHTML="1980s";
+    // drawIll.innerHTML=`<img src="./assets/illustrations-subject-04.png">`;
+    // output.innerHTML="1980s";
+    // theDesc.innerHTML="Pier 54";
+    if(check==0){
+      theSee.innerHTML=" more";
+      drawIll.innerHTML=`
+    <img src="./assets/illustrations-subject-04.png">  `;
+    }
+    
+    else if(check==1){
+      theSee.innerHTML=" less";
+      drawIll.innerHTML=`<img src="assets/illustrations-subject-FULL-2021-06.png">`;
+    }
     theDesc.innerHTML="Pier 54";
+    output.innerHTML="1980s";
   }
   else {
-
+    // drawIll.innerHTML=`<img src="./assets/illustrations-subject-05.png">`;
+    // output.innerHTML="2021";
+    // theDesc.innerHTML="Little Island";
     if(check==0){
       theSee.innerHTML=" more";
       drawIll.innerHTML=`
     <img src="./assets/illustrations-subject-05.png">  `;
     }
-    // drawIll.innerHTML=`<img src="assets/illustrations-subject-FULL-2021-05.png">`;
+    
     else if(check==1){
       theSee.innerHTML=" less";
       drawIll.innerHTML=`<img src="assets/illustrations-subject-FULL-2021-05.png">`;
